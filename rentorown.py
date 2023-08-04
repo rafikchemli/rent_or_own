@@ -89,7 +89,6 @@ def plot_costs(owning_costs, renting_costs, loan_term):
 
 
 
-
 col1, colx, col2, coly, col3 = st.columns([2,1.2,5,1,2])
 
 
