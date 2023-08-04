@@ -6,7 +6,8 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 
 # st.set_page_config(layout="wide", page_icon=":house_with_garden:")
-
+st.markdown("<h1 style='text-align:center;'>Mortgage VS. Rent & Invest </h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align:center;'> What's Your Move? </h4>", unsafe_allow_html=True)
 
 def calculate_owning_scenario(home_value, mortgage_rate, maintenance_rate, property_tax_rate, home_growth_rate, years, loan_term, down_payment_pct):
     mortgage_rate /= 100
@@ -89,7 +90,7 @@ def plot_costs(owning_costs, renting_costs, loan_term):
 
 
 
-col1, colx, col2, coly, col3 = st.columns([2,1.2,5,1,2])
+col1, colx, col2, coly, col3 = st.columns([2,0.5,5,0.5,2])
 
 
 with col1:
@@ -110,7 +111,7 @@ with col3:
     investment_return_rate = st.slider('Investment Return Rate (%)', min_value=0.0, max_value=100.0, step=0.1, value=8.0)
 
 with col2:
-    st.markdown("<h1 style='text-align:center;'>Mortgage VS. Rent & Invest </h1>", unsafe_allow_html=True)
+    
     down_payment_pct= down_payment_pct/100
     down_payment = home_value * down_payment_pct
     mortgage_rate_percent = mortgage_rate / 100
