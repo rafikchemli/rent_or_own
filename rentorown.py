@@ -53,16 +53,17 @@ def plot_scenarios(owning_data, renting_data, loan_term):
         'Net Worth Renting': renting_data
     })
     fig = px.line(df, x='Year', y=df.columns[1:], line_dash_sequence=['solid', 'solid'], color_discrete_map={'Net Worth Owning': palette[0], 'Net Worth Renting': palette[1]})
+    fig.update_traces(hovertemplate='%{y}')
     fig.update_layout(
         title={"text": "Net Worth Projection", "x": 0.5, "xanchor": "center"},
         xaxis_title="Years",
         yaxis_title="Net Worth ($)",
         showlegend=True,
         yaxis_tickprefix="$",
-        legend=dict(x=0.7, y=0.1, title=""),
+        legend=dict(x=0.1, y=0.8, title=""),
         hovermode='x unified'
     )
-    fig.update_traces(hoverinfo="x+y")
+    fig.update_traces(hoverinfo="y")
     return fig
 
 def plot_costs(owning_costs, renting_costs, loan_term):
@@ -73,6 +74,7 @@ def plot_costs(owning_costs, renting_costs, loan_term):
         'Rent Costs': renting_costs
     })
     fig = px.line(df_costs, x='Year', y=df_costs.columns[1:], line_dash_sequence=['solid', 'solid'], color_discrete_map={'Owning Costs': palette[0], 'Rent Costs': palette[1]})
+    fig.update_traces(hovertemplate='%{y}')
     fig.update_layout(
         title={"text": "Owning Costs vs Rent Costs", "x": 0.5, "xanchor": "center"},
         xaxis_title="Years",
@@ -83,7 +85,7 @@ def plot_costs(owning_costs, renting_costs, loan_term):
         legend=dict(x=0.7, y=0.1, title=""),
         hovermode='x unified'
     )
-    fig.update_traces(hoverinfo="x+y")
+    fig.update_traces(hoverinfo="y")
     return fig
 
 
@@ -111,10 +113,12 @@ with col3:
     investment_return_rate = st.slider('Investment Return Rate (%)', min_value=0.0, max_value=100.0, step=0.1, value=8.0)
     st.markdown(""" """)
     st.markdown("""
-        <div style='background-color: #1111; padding: 20px; border-radius: 10px; text-align: justify;'>
-            The decision between putting your money into a mortgage or renting and investing the rest is multifaceted. This dashboard is designed to make that decision clearer by providing a transparent, side-by-side comparison of both options.
-        </div>
-        """, unsafe_allow_html=True)
+    <div style='background-color: #1111; padding: 0px; border-radius: 10px; text-align: justify;'>
+        Buying a house or renting and investing the extra money. It's a big decision, and there's no right answer for everyone. With this dashboard, you can input your own numbers and see what each path might look like for you. Explore, compare, and find what feels right.
+    </div>
+    """, unsafe_allow_html=True)
+
+
     
 with col2:
     mortgage_rate, maintenance_rate, property_tax_rate, home_growth_rate, rent_growth_rate, investment_return_rate, down_payment_pct = convert_rates_to_decimal(
