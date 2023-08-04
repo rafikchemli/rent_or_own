@@ -106,7 +106,7 @@ with col1:
 
 with col3:
     st.markdown("<h4 style='text-align:center;'> Rent & Invest </h4>", unsafe_allow_html=True)
-    rent = st.number_input('Monthly Rent', min_value=1, max_value=5000, value=2000, step=100)
+    rent = st.number_input('Monthly Rent', min_value=1, max_value=1000000, value=2000, step=100)
     rent_growth_rate = st.slider('Rent Growth Rate (%)', min_value=0.0, max_value=10.0, step=0.1, value=5.0)
     investment_return_rate = st.slider('Investment Return Rate (%)', min_value=0.0, max_value=100.0, step=0.1, value=8.0)
     st.markdown(""" """)
