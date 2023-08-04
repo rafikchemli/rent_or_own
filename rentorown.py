@@ -93,7 +93,7 @@ col1, colx, col2, coly, col3 = st.columns([2,0.5,5,0.5,2])
 
 with col1:
     st.markdown("<h4 style='text-align:center;'> Mortgage </h4>", unsafe_allow_html=True)
-    home_value = st.number_input('Home Value', min_value=50000, max_value=1000000, value=500000, step=50000)
+    home_value = st.number_input('Home Value', min_value=1, max_value=1000000000, value=500000, step=50000)
     home_growth_rate = st.slider('Home Growth Rate (%)', min_value=0.0, max_value=20.0, step=0.1, value=5.0)
     down_payment_pct = st.slider('Down Payement (%)', 0, 100, 15)
     mortgage_rate = st.slider('Mortgage Rate (%)', min_value=0.0, max_value=10.0, step=0.1, value=5.0)
