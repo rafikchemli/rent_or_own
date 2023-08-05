@@ -145,14 +145,15 @@ with col2:
     with tab1:
         with st.container():
             st.write("<div style='text-align: center;'>", unsafe_allow_html=True)
-            st.plotly_chart(fig_networth, config={'displaylogo': False, 'modeBarButtonsToRemove': ['toggleFullscreen']}, use_container_width=True)
+            st.plotly_chart(fig_networth, config={'displayModeBar': False}, use_container_width=True)
+
             st.write("</div>", unsafe_allow_html=True)
         fig_costs = plot_costs(owning_costs, renting_costs, loan_term)
 
     with tab2:
         with st.container():
             st.write("<div style='text-align: center;'>", unsafe_allow_html=True)
-            st.plotly_chart(fig_costs, config={'displaylogo': False, 'modeBarButtonsToRemove': ['toggleFullscreen']}, use_container_width=True)
+            st.plotly_chart(fig_costs, config={'displayModeBar': False}, use_container_width=True)
             st.write("</div>", unsafe_allow_html=True)
     with tab3:
         with st.container():
