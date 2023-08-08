@@ -114,7 +114,7 @@ with col3:
     st.markdown(""" """)
     st.markdown("""
     <div style='padding: 0px; border-radius: 10px; text-align: justify;'>
-        Buying a house or renting and investing the extra money. It's a big decision, and there's no right answer for everyone. With this dashboard, you can input your own numbers and see what each path might look like for you. Explore, compare, and find what feels right.
+        Buying a house or renting and investing the extra money: It's a big decision, and there's no right answer for everyone. With this dashboard, you can input your own numbers and see what each path might look like for you. Explore, compare, and find what feels right.
     </div>
     """, unsafe_allow_html=True)
 
