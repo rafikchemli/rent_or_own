@@ -211,13 +211,11 @@ with col2:
                 st.markdown("- Access to financial tools like HELOCs, home equity loans, and refinancing.")
                 st.markdown("- Potential for home value appreciation through improvements and market growth.")
                 st.markdown("- Opportunity for potential tax deductions related to mortgage interest and improvements.")
-                st.markdown("- Building equity in the property.")
 
             # Renting & Investing
             with col2:
                 st.markdown("### Renting & Investing")
                 st.markdown("- Flexibility to move, making it easy to adapt to lifestyle changes.")
-                st.markdown("- Limited control over property, with no commitment to maintenance.")
                 st.markdown("- Opportunity to invest in diverse assets, not tied to real estate.")
                 st.markdown("- Low responsibility for property maintenance, freeing up time and resources.")
                 st.markdown("- Frees up capital that might otherwise be tied to a mortgage, allowing for greater investment opportunities.")
