@@ -113,7 +113,7 @@ with col3:
     investment_return_rate = st.slider('Investment Return Rate (%)', min_value=0.0, max_value=100.0, step=0.1, value=8.0)
     st.markdown(""" """)
     st.markdown("""
-    <div style='background-color: #1111; padding: 0px; border-radius: 10px; text-align: justify;'>
+    <div style='padding: 0px; border-radius: 10px; text-align: justify;'>
         Buying a house or renting and investing the extra money. It's a big decision, and there's no right answer for everyone. With this dashboard, you can input your own numbers and see what each path might look like for you. Explore, compare, and find what feels right.
     </div>
     """, unsafe_allow_html=True)
