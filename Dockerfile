@@ -14,4 +14,4 @@ COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run the application
-CMD streamlit run app.py
+CMD streamlit run rentorown.py
