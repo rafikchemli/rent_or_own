@@ -8,8 +8,8 @@
           <input
             id="home-value"
             type="number" inputmode="decimal"
-            :value="modelValue.homeValue"
-            @input="emit('update:modelValue', { ...modelValue, homeValue: +$event.target.value })"
+            :value="inputs.homeValue"
+            @input="inputs.homeValue = +$event.target.value"
             min="50000"
             max="5000000"
             step="10000"
@@ -23,8 +23,8 @@
           <input
             id="monthly-rent"
             type="number" inputmode="decimal"
-            :value="modelValue.rent"
-            @input="emit('update:modelValue', { ...modelValue, rent: +$event.target.value })"
+            :value="inputs.rent"
+            @input="inputs.rent = +$event.target.value"
             min="200"
             max="20000"
             step="100"
@@ -37,8 +37,8 @@
           <input
             id="mortgage-rate"
             type="number" inputmode="decimal"
-            :value="(modelValue.mortgageRate * 100).toFixed(1)"
-            @input="emit('update:modelValue', { ...modelValue, mortgageRate: +$event.target.value / 100 })"
+            :value="(inputs.mortgageRate * 100).toFixed(1)"
+            @input="inputs.mortgageRate = +$event.target.value / 100"
             min="0"
             max="15"
             step="0.1"
@@ -66,8 +66,8 @@
             <input
               id="down-pct"
               type="number" inputmode="decimal"
-              :value="(modelValue.downPaymentPct * 100).toFixed(0)"
-              @input="emit('update:modelValue', { ...modelValue, downPaymentPct: +$event.target.value / 100 })"
+              :value="(inputs.downPaymentPct * 100).toFixed(0)"
+              @input="inputs.downPaymentPct = +$event.target.value / 100"
               min="0" max="100" step="1"
             />
             <span class="input-suffix">%</span>
@@ -79,8 +79,8 @@
             <input
               id="loan-term"
               type="number" inputmode="decimal"
-              :value="modelValue.loanTerm"
-              @input="emit('update:modelValue', { ...modelValue, loanTerm: +$event.target.value })"
+              :value="inputs.loanTerm"
+              @input="inputs.loanTerm = +$event.target.value"
               min="5" max="40" step="1"
             />
             <span class="input-suffix">yr</span>
@@ -92,8 +92,8 @@
             <input
               id="home-growth"
               type="number" inputmode="decimal"
-              :value="(modelValue.homeGrowthRate * 100).toFixed(1)"
-              @input="emit('update:modelValue', { ...modelValue, homeGrowthRate: +$event.target.value / 100 })"
+              :value="(inputs.homeGrowthRate * 100).toFixed(1)"
+              @input="inputs.homeGrowthRate = +$event.target.value / 100"
               min="0" max="15" step="0.1"
             />
             <span class="input-suffix">%</span>
@@ -105,8 +105,8 @@
             <input
               id="invest-return"
               type="number" inputmode="decimal"
-              :value="(modelValue.investmentReturnRate * 100).toFixed(1)"
-              @input="emit('update:modelValue', { ...modelValue, investmentReturnRate: +$event.target.value / 100 })"
+              :value="(inputs.investmentReturnRate * 100).toFixed(1)"
+              @input="inputs.investmentReturnRate = +$event.target.value / 100"
               min="0" max="20" step="0.1"
             />
             <span class="input-suffix">%</span>
@@ -118,8 +118,8 @@
             <input
               id="rent-growth"
               type="number" inputmode="decimal"
-              :value="(modelValue.rentGrowthRate * 100).toFixed(1)"
-              @input="emit('update:modelValue', { ...modelValue, rentGrowthRate: +$event.target.value / 100 })"
+              :value="(inputs.rentGrowthRate * 100).toFixed(1)"
+              @input="inputs.rentGrowthRate = +$event.target.value / 100"
               min="0" max="15" step="0.1"
             />
             <span class="input-suffix">%</span>
@@ -131,8 +131,8 @@
             <input
               id="maintenance"
               type="number" inputmode="decimal"
-              :value="(modelValue.maintenanceRate * 100).toFixed(1)"
-              @input="emit('update:modelValue', { ...modelValue, maintenanceRate: +$event.target.value / 100 })"
+              :value="(inputs.maintenanceRate * 100).toFixed(1)"
+              @input="inputs.maintenanceRate = +$event.target.value / 100"
               min="0" max="5" step="0.1"
             />
             <span class="input-suffix">%</span>
@@ -144,8 +144,8 @@
             <input
               id="prop-tax"
               type="number" inputmode="decimal"
-              :value="(modelValue.propertyTaxRate * 100).toFixed(1)"
-              @input="emit('update:modelValue', { ...modelValue, propertyTaxRate: +$event.target.value / 100 })"
+              :value="(inputs.propertyTaxRate * 100).toFixed(1)"
+              @input="inputs.propertyTaxRate = +$event.target.value / 100"
               min="0" max="5" step="0.1"
             />
             <span class="input-suffix">%</span>
@@ -160,10 +160,9 @@
 import { ref } from 'vue'
 
 defineProps({
-  modelValue: { type: Object, required: true },
+  inputs: { type: Object, required: true },
 })
 
-const emit = defineEmits(['update:modelValue'])
 const showAssumptions = ref(false)
 </script>
 

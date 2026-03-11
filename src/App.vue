@@ -1,7 +1,7 @@
 <template>
   <div class="stack">
     <AppHeader />
-    <InputControls v-model="inputs" />
+    <InputControls :inputs="inputs" />
     <BattleZone
     :finalOwn="results.own[results.own.length - 1]"
     :finalRent="results.rent[results.rent.length - 1]"

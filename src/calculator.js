@@ -43,7 +43,8 @@ export function calculate({
 
     const annualOwnCost =
       annualMortgage +
-      (currentHome - outstanding) * (maintenanceRate + propertyTaxRate)
+      currentHome * maintenanceRate +
+      currentHome * propertyTaxRate
     owningCosts.push(annualOwnCost)
 
     currentHome *= 1 + homeGrowthRate
