@@ -1,8 +1,4 @@
 node_modules
 dist
-.git
-.gitignore
-*.md
 .superpowers
 .claude
-.claude-design
